@@ -4,12 +4,12 @@ A Business Central AL extension that rewards employees with a bonus calculated f
 The rate is never hardcoded: an event subscriber calls a codeunit that reads it from the setup table.
 
 ## What it does
-- **Bonus Setup** (singleton): bonus rate (%) and an Enabled switch.
+- **Bonus Setup**: (singleton) bonus rate (%) and an Enabled switch.
 - **Bonus Entry**: one record per recognition (employee, date, base amount, reason). Rate and bonus amount are calculated automatically on insert.
 - **Bonus Entries list** with a FactBox showing the employee total and the running total of all bonuses.
 - **Employee Card** shows **Total Bonus YTD** (added through a table extension and a page extension).
 - **Bonus Overview** report with date and employee filters.
-- **Tests**: 10% x 500,000 = 50,000, and a 15% case that proves the rate is read from setup.
+- **Tests**: 10% x 500,000 = 50,000
 
 ## Objects
 | Type | ID | Name |
@@ -43,7 +43,7 @@ BonusApp/
 4. Copy the `BonusApp` folder into the project, next to `app.json`.
 5. Run **AL: Download Symbols**, then press **F5** to publish to your sandbox.
 
-## Try it
+## You can test using these instructions
 1. Search **Bonus Setup**. Rate = 10, Enabled = on.
 2. Search **Bonus Entries**. Add: employee, date, base amount 500,000. Bonus amount shows 50,000.
 3. Add a second entry of 300,000. The FactBox total shows 80,000 for that employee.
@@ -55,11 +55,11 @@ git init
 git branch -M main
 git remote add origin <your repository URL>
 git add .
-git commit -m "Initialize Business Central bonus extension project"
+git commit -m "Initialize Bonus Extension Project"
 git push -u origin main
 ```
 
-## Build phases
+## These are the Build phases
 1. Foundation: project, tables, relations, FlowFields
 2. UI: setup card, entry list, FactBox
 3. Logic: codeunit and event subscribers
