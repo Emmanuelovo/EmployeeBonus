@@ -28,6 +28,7 @@ table 50100 "Bonus Setup"
             FieldClass = FlowField;
             // We will link this once the table for Bonus Entry is set CalcFormula = sum();
             Editable = false;
+            CalcFormula = sum("Bonus Entry"."Base Amount");
         }
     }
 
